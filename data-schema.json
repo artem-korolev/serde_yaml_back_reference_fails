@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/DiceParent",
+  "definitions": {
+    "DiceChild": {
+      "type": "object",
+      "properties": {
+        "attention": {
+          "type": "string"
+        },
+        "parent": {
+          "$ref": "#/definitions/DiceParent"
+        }
+      }
+    },
+    "DiceParent": {
+      "type": "object",
+      "properties": {
+        "childList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DiceChild"
+          }
+        },
+        "val1": {
+          "type": "string"
+        },
+        "val2": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

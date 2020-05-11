@@ -1,0 +1,8 @@
+&id001 !!DiceParent
+childList:
+- attention: I AM FIRST CHILD
+  parent: *id001
+- attention: I AM CHILD N2
+  parent: *id001
+val1: odin
+val2: dva
