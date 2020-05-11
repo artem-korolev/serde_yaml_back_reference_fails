@@ -11,7 +11,7 @@ extern crate serde_json;
 mod dice_parent;
 use dice_parent::DiceParent;
 
-fn read_username_from_file() -> Result<String, io::Error> {
+fn read_file_to_string() -> Result<String, io::Error> {
     let mut f = File::open("data.yml")?;
     let mut s = String::new();
     f.read_to_string(&mut s)?;
@@ -19,7 +19,7 @@ fn read_username_from_file() -> Result<String, io::Error> {
 }
 
 fn main() -> Result<(), serde_yaml::Error> {
-    let s = read_username_from_file().unwrap();
+    let s = read_file_to_string().unwrap();
     let dice_parent: DiceParent = serde_yaml::from_str(&s)?;
     println!("Dice parent property val1 = {}", dice_parent.val1.unwrap());
     Ok(())
