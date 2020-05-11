@@ -19,7 +19,6 @@ fn read_username_from_file() -> Result<String, io::Error> {
 }
 
 fn main() -> Result<(), serde_yaml::Error> {
-
     let s = read_username_from_file().unwrap();
     let dice_parent: DiceParent = serde_yaml::from_str(&s)?;
     println!("Dice parent property val1 = {}", dice_parent.val1.unwrap());
